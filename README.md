@@ -37,7 +37,6 @@
 
 # 분석/설계
 
-![캡처](https://github.com/hyeonnimm/msgservice/assets/170282165/c80e93d9-5e58-46a0-a6a3-8917d688a632)
 
 
 1) 분산트랜잭션 - Saga
