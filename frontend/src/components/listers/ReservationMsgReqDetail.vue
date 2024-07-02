@@ -14,6 +14,9 @@
             <div>
                 <String label="Status" v-model="item.status" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <Number label="MsgId" v-model="item.msgId" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

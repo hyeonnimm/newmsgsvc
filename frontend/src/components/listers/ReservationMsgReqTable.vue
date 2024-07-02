@@ -70,6 +70,7 @@
                     { text: "userName", value: "userName" },
                     { text: "msgContent", value: "msgContent" },
                     { text: "status", value: "status" },
+                    { text: "msgId", value: "msgId" },
                 ],
             msgReq : [],
             newValue: {},
@@ -90,6 +91,7 @@
                 'userName': '',
                 'msgContent': '',
                 'status': '',
+                'msgId': 0,
             }
         },
         methods: {

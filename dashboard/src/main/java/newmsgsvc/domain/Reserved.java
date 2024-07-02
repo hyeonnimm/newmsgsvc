@@ -12,4 +12,5 @@ public class Reserved extends AbstractEvent {
     private String userName;
     private String MsgContent;
     private String Status;
+    private Long MsgId;
 }
