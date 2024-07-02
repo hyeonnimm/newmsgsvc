@@ -22,8 +22,8 @@ See the README.md files inside the each microservices directory:
 
 - reservation
 - sender
-- BoundedContext279
-- BoundedContext1410
+- dashboard
+- stat
 
 
 ## Run API Gateway (Spring Gateway)
@@ -41,10 +41,10 @@ mvn spring-boot:run
 ```
  http :8088/msgLists id="id" userName="userName" msgContent="MsgContent" status="Status" 
 ```
-- BoundedContext279
+- dashboard
 ```
 ```
-- BoundedContext1410
+- stat
 ```
  http :8088/stats id="id" userName="userName" rate="rate" stat="stat" history="history" 
 ```

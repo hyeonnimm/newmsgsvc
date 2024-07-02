@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: BoundedContext279
+  name: dashboard
   labels:
-    app: BoundedContext279
+    app: dashboard
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: BoundedContext279
+      app: dashboard
   template:
     metadata:
       labels:
-        app: BoundedContext279
+        app: dashboard
     spec:
       containers:
-        - name: BoundedContext279
-          image: username/BoundedContext279:latest
+        - name: dashboard
+          image: username/dashboard:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -123,22 +123,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: BoundedContext1410
+  name: stat
   labels:
-    app: BoundedContext1410
+    app: stat
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: BoundedContext1410
+      app: stat
   template:
     metadata:
       labels:
-        app: BoundedContext1410
+        app: stat
     spec:
       containers:
-        - name: BoundedContext1410
-          image: username/BoundedContext1410:latest
+        - name: stat
+          image: username/stat:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -199,15 +199,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: BoundedContext279
+  name: dashboard
   labels:
-    app: BoundedContext279
+    app: dashboard
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: BoundedContext279
+    app: dashboard
 
 
 ---
@@ -216,13 +216,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: BoundedContext1410
+  name: stat
   labels:
-    app: BoundedContext1410
+    app: stat
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: BoundedContext1410
+    app: stat
 

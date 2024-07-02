@@ -17,11 +17,11 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/msgLists/**, 
-        - id: BoundedContext279
+        - id: dashboard
           uri: http://localhost:8084
           predicates:
             - Path=, 
-        - id: BoundedContext1410
+        - id: stat
           uri: http://localhost:8085
           predicates:
             - Path=/stats/**, 
@@ -57,12 +57,12 @@ spring:
           uri: http://sender:8080
           predicates:
             - Path=/msgLists/**, 
-        - id: BoundedContext279
-          uri: http://boundedContext279:8080
+        - id: dashboard
+          uri: http://dashboard:8080
           predicates:
             - Path=, 
-        - id: BoundedContext1410
-          uri: http://boundedContext1410:8080
+        - id: stat
+          uri: http://stat:8080
           predicates:
             - Path=/stats/**, 
         - id: frontend
