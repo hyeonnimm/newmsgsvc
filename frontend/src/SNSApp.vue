@@ -62,7 +62,7 @@
                     <v-list-item
                         class="px-2"
                         key="stats"
-                        to="/boundedContext1410s/stats"
+                        to="/stats/stats"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -167,7 +167,7 @@ export default {
                 title: 'Stat', 
                 description: '', 
                 key: 'stats', 
-                route: '/boundedContext1410s/stats',
+                route: '/stats/stats',
                 ImageUrl: '',
             },
             

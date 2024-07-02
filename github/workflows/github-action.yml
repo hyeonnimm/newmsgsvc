@@ -31,8 +31,8 @@ jobs:
         run: |
           mvn clean package -f ./reservation/pom.xml
           mvn clean package -f ./sender/pom.xml
-          mvn clean package -f ./BoundedContext279/pom.xml
-          mvn clean package -f ./BoundedContext1410/pom.xml
+          mvn clean package -f ./dashboard/pom.xml
+          mvn clean package -f ./stat/pom.xml
 
       - name: Docker Build and push for Reservation
         uses: docker/build-push-action@v4
@@ -54,23 +54,23 @@ jobs:
             ghcr.io/${{ github.repository }}/sender:latest
             ghcr.io/${{ github.repository }}/sender:${{ github.ref_name }}
             
-      - name: Docker Build and push for BoundedContext279
+      - name: Docker Build and push for Dashboard
         uses: docker/build-push-action@v4
         with:
-          context: ./BoundedContext279
+          context: ./dashboard
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/boundedcontext279:latest
-            ghcr.io/${{ github.repository }}/boundedcontext279:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/dashboard:latest
+            ghcr.io/${{ github.repository }}/dashboard:${{ github.ref_name }}
             
-      - name: Docker Build and push for BoundedContext1410
+      - name: Docker Build and push for Stat
         uses: docker/build-push-action@v4
         with:
-          context: ./BoundedContext1410
+          context: ./stat
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/boundedcontext1410:latest
-            ghcr.io/${{ github.repository }}/boundedcontext1410:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/stat:latest
+            ghcr.io/${{ github.repository }}/stat:${{ github.ref_name }}
             

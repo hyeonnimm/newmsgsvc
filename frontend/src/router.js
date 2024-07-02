@@ -12,8 +12,8 @@ import SenderMsgListManager from "./components/listers/SenderMsgListCards"
 import SenderMsgListDetail from "./components/listers/SenderMsgListDetail"
 
 
-import BoundedContext1410StatManager from "./components/listers/BoundedContext1410StatCards"
-import BoundedContext1410StatDetail from "./components/listers/BoundedContext1410StatDetail"
+import StatStatManager from "./components/listers/StatStatCards"
+import StatStatDetail from "./components/listers/StatStatDetail"
 
 
 export default new Router({
@@ -44,14 +44,14 @@ export default new Router({
 
 
             {
-                path: '/boundedContext1410s/stats',
-                name: 'BoundedContext1410StatManager',
-                component: BoundedContext1410StatManager
+                path: '/stats/stats',
+                name: 'StatStatManager',
+                component: StatStatManager
             },
             {
-                path: '/boundedContext1410s/stats/:id',
-                name: 'BoundedContext1410StatDetail',
-                component: BoundedContext1410StatDetail
+                path: '/stats/stats/:id',
+                name: 'StatStatDetail',
+                component: StatStatDetail
             },
 
 
