@@ -47,31 +47,19 @@ public class MsgList {
 
     //<<< Clean Arch / Port Method
     public static void reqSend(Reserved reserved) {
-        //implement business logic here:
 
-        /** Example 1:  new item 
-        MsgList msgList = new MsgList();
-        repository().save(msgList);
-
-        MsgSent msgSent = new MsgSent(msgList);
-        msgSent.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(reserved.get???()).ifPresent(msgList->{
+        // repository().findById(reserved.getId()).ifPresent(msgList->{
             
-            msgList // do something
-            repository().save(msgList);
+        //     if(inventory.getStock() >= reserved.getMsgContent()){
+        //     repository().save(msgList);
 
-            MsgSent msgSent = new MsgSent(msgList);
-            msgSent.publishAfterCommit();
+        //     MsgSent msgSent = new MsgSent(msgList);
+        //     msgSent.publishAfterCommit();
 
-         });
+        //  });
         */
 
     }
-    //>>> Clean Arch / Port Method
 
 }
 //>>> DDD / Aggregate Root
