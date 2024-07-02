@@ -25,22 +25,6 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='SendFailed'"
-    )
-    public void wheneverSendFailed_UpdateStatus(
-        @Payload SendFailed sendFailed
-    ) {
-        SendFailed event = sendFailed;
-        System.out.println(
-            "\n\n##### listener UpdateStatus : " + sendFailed + "\n\n"
-        );
-
-        // Sample Logic //
-        MsgReq.updateStatus(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='SendCompleted'"
     )
     public void wheneverSendCompleted_UpdateStatus(
