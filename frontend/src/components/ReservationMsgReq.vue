@@ -19,6 +19,7 @@
             <String label="UserName" v-model="value.userName" :editMode="editMode" :inputUI="''"/>
             <String label="MsgContent" v-model="value.msgContent" :editMode="editMode" :inputUI="''"/>
             <String label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
+            <Number label="MsgId" v-model="value.msgId" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>

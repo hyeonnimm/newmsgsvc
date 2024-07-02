@@ -112,6 +112,7 @@
                 'userName': '',
                 'msgContent': '',
                 'status': '',
+                'msgId': 0,
             }
         },
         methods:{

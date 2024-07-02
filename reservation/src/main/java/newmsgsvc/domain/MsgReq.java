@@ -24,6 +24,8 @@ public class MsgReq {
 
     private String status;
 
+    private Long msgId;
+
     @PostPersist
     public void onPostPersist() {
         Reserved reserved = new Reserved(this);

@@ -35,7 +35,7 @@ mvn spring-boot:run
 ## Test by API
 - reservation
 ```
- http :8088/msgReqs id="id" userName="userName" msgContent="MsgContent" status="Status" 
+ http :8088/msgReqs id="id" userName="userName" msgContent="MsgContent" status="Status" msgId="MsgId" 
 ```
 - sender
 ```
