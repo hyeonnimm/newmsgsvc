@@ -48,35 +48,22 @@ public class MsgList {
     public static void reqSend(Reserved reserved) {
         //implement business logic here:
 
-        /** Example 1:  new item 
-        MsgList msgList = new MsgList();
-        repository().save(msgList);
-
-        MsgSent msgSent = new MsgSent(msgList);
-        msgSent.publishAfterCommit();
-        SendFailed sendFailed = new SendFailed(msgList);
-        sendFailed.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(reserved.get???()).ifPresent(msgList->{
+        repository().findById(reserved.getMsgId()).ifPresent(msgList->{
             
             if(10 >= reserved.getMsgContent().length()){
-            repository().save(msgList);
+                repository().save(msgList);
 
-            MsgSent msgSent = new MsgSent(msgList);
-            msgSent.publishAfterCommit();
-            SendFailed sendFailed = new SendFailed(msgList);
-            sendFailed.publishAfterCommit();
+                MsgSent msgSent = new MsgSent(msgList);
+                msgSent.setReservationId(reserved.getId());
+                msgSent.publishAfterCommit();
 
-         }else{
-            SendFailed sendFailed  = new SendFailed(msgList);
-            sendFailed.publishAfterCommit();
-         }
+            }else{
+                SendFailed sendFailed  = new SendFailed(msgList);
+                sendFailed.setReservationId(reserved.getId());
+                sendFailed.publishAfterCommit();
+            }
          
-         );
-        */
+        });
 
     }
 

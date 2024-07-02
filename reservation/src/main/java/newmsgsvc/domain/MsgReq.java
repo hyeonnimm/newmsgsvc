@@ -66,14 +66,12 @@ public class MsgReq {
     //<<< Clean Arch / Port Method
     public static void updateStatus(SendFailed sendFailed) {
 
-        repository().findById(sendFailed.getMsgId()).ifPresent(msgReq->{
+        repository().findById(sendFailed.getReservationId()).ifPresent(msgReq->{
             
-            msgReq // do something
+            msgReq.setStatus("msg send cancelled.");
             repository().save(msgReq);
 
-
          });
-
 
     }
     //>>> Clean Arch / Port Method

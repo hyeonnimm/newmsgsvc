@@ -57,24 +57,7 @@ public class DashboardViewHandler {
             e.printStackTrace();
         }
     }
-    @StreamListener(KafkaProcessor.INPUT)
-    public void when_then_UPDATE_(@Payload  ) {
-        try {
-            if (!.validate()) return;
-                // view 객체 조회
 
-                List<Dashboard> dashboardList = dashboardRepository.findByUserName(.getUserName());
-                for(Dashboard dashboard : dashboardList){
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    dashboard.setStatus(.getStatus());
-                // view 레파지 토리에 save
-                dashboardRepository.save(dashboard);
-                }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
     @StreamListener(KafkaProcessor.INPUT)
     public void whenSendFailed_then_UPDATE_3(@Payload SendFailed sendFailed) {
         try {
