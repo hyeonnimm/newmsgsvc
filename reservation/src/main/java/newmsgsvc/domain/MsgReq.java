@@ -89,24 +89,15 @@ public class MsgReq {
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
     public static void updateStatus(SendFailed sendFailed) {
-        //implement business logic here:
 
-        /** Example 1:  new item 
-        MsgReq msgReq = new MsgReq();
-        repository().save(msgReq);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(sendFailed.get???()).ifPresent(msgReq->{
+        repository().findById(sendFailed.getMsgId()).ifPresent(msgReq->{
             
             msgReq // do something
             repository().save(msgReq);
 
 
          });
-        */
+
 
     }
     //>>> Clean Arch / Port Method

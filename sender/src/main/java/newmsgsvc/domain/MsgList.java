@@ -48,15 +48,20 @@ public class MsgList {
     //<<< Clean Arch / Port Method
     public static void reqSend(Reserved reserved) {
 
-        // repository().findById(reserved.getId()).ifPresent(msgList->{
+        repository().findById(reserved.getMsgId()).ifPresent(msgList->{
             
-        //     if(inventory.getStock() >= reserved.getMsgContent()){
-        //     repository().save(msgList);
+            if(10 >= reserved.getMsgContent().length()){
+            repository().save(msgList);
 
-        //     MsgSent msgSent = new MsgSent(msgList);
-        //     msgSent.publishAfterCommit();
+            MsgSent msgSent = new MsgSent(msgList);
+            MsgSent.publishAfterCommit();
 
-        //  });
+         }else{
+            SendFailed sendFailed  = new SendFailed(msgList);
+            sendFailed.publishAfterCommit();
+         }
+         
+         );
         */
 
     }

@@ -109,15 +109,16 @@ mvn spring-boot:run
 ## Test by API
 - reservation
 ```
- http :8088/msgReqs id="id" userId="userId" msgTitle="MsgTitle" msgContent="MsgContent" reserveDt="ReserveDt" dstNum="DstNum" callbackNum="CallbackNum" reserveQt="ReserveQt" status="status" 
+
+http POST localhost:8082/msgReqs userName="ydh" MsgContent="hi" Status="reserve" 
 ```
-- send
+- sender
 ```
- http :8088/msgs id="id" reservationId="ReservationId" msgTitle="MsgTitle" msgContent="MsgContent" reserveDt="ReserveDt" dstNum="DstNum" callbackNum="CallbackNum" status="status" 
+
 ```
 - stat
 ```
- http :8088/stats id="id" userId="userId" rate="Rate" history="history" stat="stat" 
+
 ```
 - monitoring
 ```
