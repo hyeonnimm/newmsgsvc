@@ -44,30 +44,6 @@ public class Stat {
     }
 
     //<<< Clean Arch / Port Method
-    public static void increaseRate(SendCompleted sendCompleted) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Stat stat = new Stat();
-        repository().save(stat);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(sendCompleted.get???()).ifPresent(stat->{
-            
-            stat // do something
-            repository().save(stat);
-
-
-         });
-        */
-
-    }
-
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
     public static void increaseStat(SendFailed sendFailed) {
         //implement business logic here:
 
@@ -80,30 +56,6 @@ public class Stat {
         /** Example 2:  finding and process
         
         repository().findById(sendFailed.get???()).ifPresent(stat->{
-            
-            stat // do something
-            repository().save(stat);
-
-
-         });
-        */
-
-    }
-
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
-    public static void increaseStat(SendCompleted sendCompleted) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Stat stat = new Stat();
-        repository().save(stat);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(sendCompleted.get???()).ifPresent(stat->{
             
             stat // do something
             repository().save(stat);

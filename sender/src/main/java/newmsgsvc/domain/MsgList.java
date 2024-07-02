@@ -7,7 +7,6 @@ import javax.persistence.*;
 import lombok.Data;
 import newmsgsvc.SenderApplication;
 import newmsgsvc.domain.MsgSent;
-import newmsgsvc.domain.SendCompleted;
 import newmsgsvc.domain.SendFailed;
 
 @Entity
@@ -27,12 +26,12 @@ public class MsgList {
     private String status;
 
     @PostPersist
-    public void onPostPersist() {
+    public void onPostPersist() {}
+
+    @PostUpdate
+    public void onPostUpdate() {
         MsgSent msgSent = new MsgSent(this);
         msgSent.publishAfterCommit();
-
-        SendCompleted sendCompleted = new SendCompleted(this);
-        sendCompleted.publishAfterCommit();
 
         SendFailed sendFailed = new SendFailed(this);
         sendFailed.publishAfterCommit();
@@ -55,6 +54,8 @@ public class MsgList {
 
         MsgSent msgSent = new MsgSent(msgList);
         msgSent.publishAfterCommit();
+        SendFailed sendFailed = new SendFailed(msgList);
+        sendFailed.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -66,6 +67,8 @@ public class MsgList {
 
             MsgSent msgSent = new MsgSent(msgList);
             msgSent.publishAfterCommit();
+            SendFailed sendFailed = new SendFailed(msgList);
+            sendFailed.publishAfterCommit();
 
          });
         */
