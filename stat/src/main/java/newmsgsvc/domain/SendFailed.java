@@ -13,4 +13,5 @@ public class SendFailed extends AbstractEvent {
     private String userName;
     private String msgContent;
     private String status;
+    private Long reservationId;
 }

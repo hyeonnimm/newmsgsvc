@@ -25,22 +25,6 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='SendCompleted'"
-    )
-    public void wheneverSendCompleted_IncreaseRate(
-        @Payload SendCompleted sendCompleted
-    ) {
-        SendCompleted event = sendCompleted;
-        System.out.println(
-            "\n\n##### listener IncreaseRate : " + sendCompleted + "\n\n"
-        );
-
-        // Sample Logic //
-        Stat.increaseRate(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='SendFailed'"
     )
     public void wheneverSendFailed_IncreaseStat(
@@ -49,22 +33,6 @@ public class PolicyHandler {
         SendFailed event = sendFailed;
         System.out.println(
             "\n\n##### listener IncreaseStat : " + sendFailed + "\n\n"
-        );
-
-        // Sample Logic //
-        Stat.increaseStat(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='SendCompleted'"
-    )
-    public void wheneverSendCompleted_IncreaseStat(
-        @Payload SendCompleted sendCompleted
-    ) {
-        SendCompleted event = sendCompleted;
-        System.out.println(
-            "\n\n##### listener IncreaseStat : " + sendCompleted + "\n\n"
         );
 
         // Sample Logic //

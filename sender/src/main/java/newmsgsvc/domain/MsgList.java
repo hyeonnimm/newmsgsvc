@@ -7,7 +7,6 @@ import javax.persistence.*;
 import lombok.Data;
 import newmsgsvc.SenderApplication;
 import newmsgsvc.domain.MsgSent;
-import newmsgsvc.domain.SendCompleted;
 import newmsgsvc.domain.SendFailed;
 
 @Entity
@@ -27,12 +26,12 @@ public class MsgList {
     private String status;
 
     @PostPersist
-    public void onPostPersist() {
+    public void onPostPersist() {}
+
+    @PostUpdate
+    public void onPostUpdate() {
         MsgSent msgSent = new MsgSent(this);
         msgSent.publishAfterCommit();
-
-        SendCompleted sendCompleted = new SendCompleted(this);
-        sendCompleted.publishAfterCommit();
 
         SendFailed sendFailed = new SendFailed(this);
         sendFailed.publishAfterCommit();
@@ -47,14 +46,29 @@ public class MsgList {
 
     //<<< Clean Arch / Port Method
     public static void reqSend(Reserved reserved) {
+        //implement business logic here:
 
-        repository().findById(reserved.getMsgId()).ifPresent(msgList->{
+        /** Example 1:  new item 
+        MsgList msgList = new MsgList();
+        repository().save(msgList);
+
+        MsgSent msgSent = new MsgSent(msgList);
+        msgSent.publishAfterCommit();
+        SendFailed sendFailed = new SendFailed(msgList);
+        sendFailed.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(reserved.get???()).ifPresent(msgList->{
             
             if(10 >= reserved.getMsgContent().length()){
             repository().save(msgList);
 
             MsgSent msgSent = new MsgSent(msgList);
-            MsgSent.publishAfterCommit();
+            msgSent.publishAfterCommit();
+            SendFailed sendFailed = new SendFailed(msgList);
+            sendFailed.publishAfterCommit();
 
          }else{
             SendFailed sendFailed  = new SendFailed(msgList);
