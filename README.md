@@ -68,11 +68,14 @@ configmap 분리를 통해 별도의 배포 없이 설정을 관리할 수 있�
 4) 클라우드스토리지 활용 - PVC
 PVC 생성 및 POD로의 연결을 통해 NFS 볼륨 정책을 관리하고자 했다.
 하지만 POD로의 연결은 실패하였다
+
 ![pvc](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/27a68d55-5726-4800-8d09-dcf305fdd11c)
 
 6) 셀프 힐링/무정지 배포
 셀프 힐링 liveness 방법론 중 가장 기본적인 Command 방법론을 적용해 보았다.
 임의적으로 정책 실패를 야기하여 unhealthy한 상태를 만들어보았다.
+
+
 ![liveness](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/f5dfd454-28c7-4f9e-9b92-9c62380adb9c)
 
 8) 서비스 메쉬 운용 - Mesh
