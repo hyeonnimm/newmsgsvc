@@ -18,9 +18,15 @@
 1. 성능
     1. 고객이 실시간으로 예약 건에 대한 상태를 Dashboard(프론트엔드)에서 확인할 수 있어야 한다  CQRS
 
-# 분석/설계
+# 아키텍쳐
 
 
+
+# 모델링
+하기와 같은 구조로 이벤트스토밍을 진행하였다.
+![msa](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/c81ab26e-e33d-49f3-9b6f-508061875ce7)
+
+# 개발
 1) 분산트랜잭션 - Saga
 
 좌측과 같이 POST를 통해 reserved 이벤트를 trigger하면, 우측과 같이 kafka에 이벤트가 발행됨을 확인할 수 있다.
@@ -47,7 +53,33 @@
 ![CQRS2](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/508d53f6-ceb3-417f-aae7-48aee94f31c8)
 
 
-# 분석/설계
+# 운영
+
+1) 클라우드 배포 - container 운영
+Amazon ECR에 이미지를 배포하였다.
+![배포](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/5161bd08-496f-4f9e-a1a6-af3a9551b634)
+
+2) 컨테이너 자동확장 - HPA
+
+
+
+3) 컨테이너로부터 환경분리 -  ConfigMap
+configmap 분리를 통해 별도의 배포 없이 설정을 관리할 수 있도록 구성하였다.
+![configmap](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/beb61d58-7d56-4a14-97c8-0812b4299283)
+
+4) 클라우드스토리지 활용 - PVC
+PVC 생성 및 POD로의 연결을 통해 NFS 볼륨 정책을 관리하고자 했다.
+하지만 POD로의 연결은 실패하였다
+![pvc](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/27a68d55-5726-4800-8d09-dcf305fdd11c)
+
+6) 셀프 힐링/무정지 배포
+셀프 힐링 liveness 방법론 중 가장 기본적인 Command 방법론을 적용해 보았다.
+임의적으로 정책 실패를 야기하여 unhealthy한 상태를 만들어보았다.
+![liveness](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/f5dfd454-28c7-4f9e-9b92-9c62380adb9c)
+
+8) 서비스 메쉬 운용 - Mesh
+
+9) 통합 모니터링 - Loggregation
 
 
 
