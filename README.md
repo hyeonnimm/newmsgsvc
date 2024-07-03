@@ -36,15 +36,15 @@
 
    
 2) 보상처리 - compensation
+다음과 같이 코드를 작성하여 시험을 진행했다.
+시험에는 실패했다.
+![compensation](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/a61a9a33-3264-447c-918e-5ab04e939650)
 
-
-3) 단일 진입점 - gateway
+4) 단일 진입점 - gateway
 gateway로도 해당 HTTP REQUEST가 정상 수행됨을 확인할 수 있다.
 ![gw](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/e3fc1332-98c5-4ae9-8ace-7185f695e9bd)
 
-
-
-4) 분산 데이터 프로젝션 - CQRS
+5) 분산 데이터 프로젝션 - CQRS
 하기 그림과 같이 Dashboard Readmodel을 설계하였다.
 해당 Dashboard엔 reserved 이벤트의 발행 시에 생성되고 MsgSent,SendFailed 이벤트 발행 시 update되어, 데이터 현행화가 비동기적으로 이루어진다.
 
