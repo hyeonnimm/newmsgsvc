@@ -19,7 +19,8 @@
     1. 고객이 실시간으로 예약 건에 대한 상태를 Dashboard(프론트엔드)에서 확인할 수 있어야 한다  CQRS
 
 # 아키텍쳐
-
+하기와 같이 아키텍처를 수립하여 프로젝트를 착수했다.
+![arch](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/f50df5b1-41de-48fb-aef2-b4a5098c57ae)
 
 
 # 모델링
@@ -80,8 +81,10 @@ PVC 생성 및 POD로의 연결을 통해 NFS 볼륨 정책을 관리하고자 �
 8) 서비스 메쉬 운용 - Mesh
 
 9) 통합 모니터링 - Loggregation
+Loki stack을 구축하여 grafana 대쉬보드를 통한 모니터링을 하도록 했다.
+msg 파드에 찍히는 로그이다.
 
-
+![grafana](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/41fe636c-6595-4197-8550-374811331f20)
 
 
 
