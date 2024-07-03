@@ -23,29 +23,31 @@
 
 1) 분산트랜잭션 - Saga
 
+좌측과 같이 POST를 통해 reserved 이벤트를 trigger하면, 우측과 같이 kafka에 이벤트가 발행됨을 확인할 수 있다.
 
+![saga](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/6d261231-44e8-4afa-a7a3-f75ad775a747)
 
    
 2) 보상처리 - compensation
 
 
-
-
-
-
 3) 단일 진입점 - gateway
 
+![gateway](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/fa8cecc8-8adc-4268-bd5f-299afc0d932c)
 
 
 
-
-  
 4) 분산 데이터 프로젝션 - CQRS
+하기 그림과 같이 Dashboard Readmodel을 설계하였다.
+해당 Dashboard엔 reserved 이벤트의 발행 시에 생성되고 MsgSent,SendFailed 이벤트 발행 시 update되어, 데이터 현행화가 비동기적으로 이루어진다.
+
+![CQRS1](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/43507925-1f01-4799-91a0-f0bb4153e3a7)
+
+하기 그림과 같이 reserved 이벤트를 발행하면, Dashboard의 데이터가 변경됨을 확인할 수 있다.
+![CQRS2](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/508d53f6-ceb3-417f-aae7-48aee94f31c8)
 
 
-
-
-
+# 분석/설계
 
 
 
