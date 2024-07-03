@@ -29,7 +29,6 @@
 
 # 개발
 1) 분산트랜잭션 - Saga
-
 좌측과 같이 POST를 통해 reserved 이벤트를 trigger하면, 우측과 같이 kafka에 이벤트가 발행됨을 확인할 수 있다.
 
 ![saga](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/6d261231-44e8-4afa-a7a3-f75ad775a747)
@@ -62,8 +61,6 @@ Amazon ECR에 이미지를 배포하였다.
 
 2) 컨테이너 자동확장 - HPA
 
-
-
 3) 컨테이너로부터 환경분리 -  ConfigMap
 configmap 분리를 통해 별도의 배포 없이 설정을 관리할 수 있도록 구성하였다.
 ![configmap](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/beb61d58-7d56-4a14-97c8-0812b4299283)
@@ -79,8 +76,10 @@ PVC 생성 및 POD로의 연결을 통해 NFS 볼륨 정책을 관리하고자 �
 ![liveness](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/f5dfd454-28c7-4f9e-9b92-9c62380adb9c)
 
 8) 서비스 메쉬 운용 - Mesh
+Istio Service Mesh 설치 및 kiali를 통한 모니터링 인터페이스를 구성했다.
+![kiali](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/754659f4-ed56-48d2-b829-c792af3572d4)
 
-9) 통합 모니터링 - Loggregation
+10) 통합 모니터링 - Loggregation
 Loki stack을 구축하여 grafana 대쉬보드를 통한 모니터링을 하도록 했다.
 msg 파드에 찍히는 로그이다.
 
