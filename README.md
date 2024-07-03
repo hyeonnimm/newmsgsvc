@@ -39,8 +39,8 @@
 
 
 3) 단일 진입점 - gateway
-
-![gateway](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/fa8cecc8-8adc-4268-bd5f-299afc0d932c)
+gateway로도 해당 HTTP REQUEST가 정상 수행됨을 확인할 수 있다.
+![gw](https://github.com/hyeonnimm/newmsgsvc/assets/170282165/e3fc1332-98c5-4ae9-8ace-7185f695e9bd)
 
 
 
